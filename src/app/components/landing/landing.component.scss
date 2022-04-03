@@ -1,0 +1,59 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.container {
+  @include FadeInAnimation;
+
+  .buttons-wrapper {
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+
+    .auth-button {
+      flex: 1 1 20rem;
+      margin: 1rem;
+      font-size: 1rem;
+      border: 1px solid $primary;
+      max-width: 15rem;
+      transition: 0.3s ease all;
+      &:hover {
+        @include PrimaryBoxShadow;
+      }
+    }
+
+    .login {
+      @include PrimaryBackground-WhiteColor;
+      &:hover {
+        @include WhiteBackground-PrimaryColor;
+      }
+    }
+
+    .register {
+      @include WhiteBackground-PrimaryColor;
+      &:hover {
+        @include PrimaryBackground-WhiteColor;
+      }
+    }
+  }
+
+  .title-wrapper {
+    flex: 1 1 auto;
+    text-align: center;
+    margin-top: 5vh;
+    h1 {
+      text-shadow: 0px 0px 6px #00000047;
+    }
+    h6 {
+      color: $primary;
+    }
+  }
+}
+
+@media screen and (max-width: $mobileViewPort) {
+  .buttons-wrapper {
+    width: 100vw;
+  }
+}
+

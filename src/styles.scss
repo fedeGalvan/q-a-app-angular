@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: -1px 2px 10px -1px rgb(0 0 0);
+}

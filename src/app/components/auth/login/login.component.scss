@@ -1,0 +1,58 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.container {
+  @include FadeInAnimation;
+  min-width: 70vw;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 2rem;
+
+  .mat-card {
+    h2 {
+      text-align: center;
+    }
+
+    .login-form-wrapper {
+      margin-top: 2rem;
+      transition: 1s ease all;
+      .mat-form-field {
+        width: 100%;
+      }
+      .input-wrapper {
+        width: 70%;
+        margin: auto;
+        display: block;
+        cursor: text;
+        position: relative;
+        .field-required-text {
+          margin-top: -1rem;
+          margin-bottom: 1rem;
+          font-size: 0.8rem;
+          color: #ff0000;
+          position: absolute;
+        }
+      }
+
+      .button-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 2rem;
+        button {
+          margin: 0.2rem auto;
+          width: calc(10rem + 1vw);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobileViewPort) {
+  .container {
+    width: 95vw;
+  }
+}

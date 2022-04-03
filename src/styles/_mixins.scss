@@ -1,0 +1,19 @@
+@import "animations";
+
+@mixin PrimaryBackground-WhiteColor {
+  background: $primary;
+  color: #fff;
+}
+
+@mixin WhiteBackground-PrimaryColor {
+  background: #fff;
+  color: $primary;
+}
+
+@mixin PrimaryBoxShadow {
+  box-shadow: 0 0 8px $primary;
+}
+
+@mixin FadeInAnimation {
+  animation: FadeIn 1s alternate;
+}
