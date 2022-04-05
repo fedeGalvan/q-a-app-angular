@@ -5,6 +5,7 @@
   @include FadeInAnimation;
 
   .buttons-wrapper {
+    margin: auto;
     margin-top: 5vh;
     display: flex;
     align-items: center;
@@ -56,4 +57,3 @@
     width: 100vw;
   }
 }
-

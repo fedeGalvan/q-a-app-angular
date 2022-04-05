@@ -1,0 +1,21 @@
+@import "../../../../styles/mixins";
+
+mat-toolbar {
+    @include FadeInAnimation;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    margin: auto;
+    .buttons-wrapper {
+      min-width: 10rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      button {
+        margin: auto 0.3rem;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 <div class="container">
+  <app-spinner *ngIf="loading"></app-spinner>
   <mat-card>
     <h2>Login to your account</h2>
     <form
@@ -44,6 +45,7 @@
           color="primary"
           type="submit"
           [disabled]="loginFormGroup.invalid"
+          routerLink="/dashboard"
         >
           Login
         </button>
