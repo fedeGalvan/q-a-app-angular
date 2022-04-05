@@ -1,0 +1,90 @@
+<div class="container">
+
+  <mat-card>
+    <app-spinner *ngIf="loading"></app-spinner>
+
+    <div class="toast-success" *ngIf="userSuccessfullyCreated">
+      <h3>User has been created!</h3>
+      <p>You'll be redirect to login</p>
+    </div>
+
+    <div class="toast-error" *ngIf="userCreationFailed">
+      <h3>User already exists!</h3>
+      <p>Please try another username</p>
+    </div>
+    
+    <h2>Create a new account</h2>
+    <form
+      class="register-form-wrapper"
+      [formGroup]="registerFormGroup"
+      (ngSubmit)="register()"
+    >
+      <div class="input-wrapper">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" />
+        </mat-form-field>
+        <p
+          class="field-required-text"
+          *ngIf="
+            registerFormGroup.get('username')?.hasError('required') &&
+            registerFormGroup.get('username')?.touched
+          "
+        >
+          This field is required.
+        </p>
+      </div>
+
+      <div class="input-wrapper">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+        <p
+          class="field-required-text"
+          *ngIf="
+            registerFormGroup.get('password')?.hasError('required') &&
+            registerFormGroup.get('password')?.touched
+          "
+        >
+          This field is required.
+        </p>
+
+        <p
+          class="field-required-text"
+          *ngIf="
+            registerFormGroup.get('password')?.hasError('minlength') &&
+            registerFormGroup.get('password')?.touched
+          "
+        >
+          Password must contain at least 4 characters.
+        </p>
+      </div>
+
+      <div class="input-wrapper">
+        <mat-form-field appearance="fill">
+          <mat-label>Repeat Password</mat-label>
+          <input matInput type="password" formControlName="repeatedPassword" />
+        </mat-form-field>
+        <p
+          class="field-required-text"
+          *ngIf="
+            registerFormGroup.hasError('notSame') &&
+            registerFormGroup.get('repeatedPassword')?.touched
+          "
+        >
+          Passwords do not match
+        </p>
+      </div>
+
+      <div class="button-wrapper">
+        <button mat-raised-button color="primary" type="submit">
+          Register
+        </button>
+        <button mat-button color="primary" routerLink="/login">
+          Have an account?
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
